@@ -13,4 +13,32 @@
         android:layout_height="wrap_content"
         android:progress="50" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="Standard" />
+
+        <RadioButton
+            android:id="@+id/radio_cyclosorus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Cyclosorus" />
+
+        <RadioButton
+            android:id="@+id/radio_fishbone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Fishbone" />
+    </RadioGroup>
+
 </LinearLayout>

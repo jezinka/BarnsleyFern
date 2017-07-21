@@ -7,14 +7,16 @@ import android.graphics.Paint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
     val MAX = 100000
     var n = MAX
+    var fern: Fern = BarnsleyFern()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(p0: SeekBar?) {
                 if (p0 != null) {
                     n = (p0.progress / 100.0 * MAX).toInt()
-                    (p0.parent as ViewGroup).getChildAt(1).requestLayout()
+                    chartLayout.getChildAt(2).requestLayout()
                 }
             }
 
@@ -43,7 +45,6 @@ class MainActivity : AppCompatActivity() {
     inner class MyView(context: Context) : View(context) {
 
         val paint = Paint()
-        val barnsleyFern = BarnsleyFern()//Mutant()
 
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
@@ -56,9 +57,32 @@ class MainActivity : AppCompatActivity() {
 
             paint.color = Color.parseColor("#006200")
 
-            val points = barnsleyFern.generateFern(n)
+            val points = fern.generateFern(n)
             canvas.drawPoints(points, paint)
         }
     }
 
+    fun onRadioButtonClicked(view: View) {
+
+        val checked = (view as RadioButton).isChecked
+
+        when (view.getId()) {
+            R.id.radio_standard -> {
+                if (checked) {
+                    fern = BarnsleyFern()
+                }
+            }
+            R.id.radio_cyclosorus -> {
+                if (checked) {
+                    fern = Cyclosorus()
+                }
+            }
+            R.id.radio_fishbone -> {
+                if (checked) {
+                    fern = Fishbone()
+                }
+            }
+        }
+        chartLayout.getChildAt(2).requestLayout()
+    }
 }

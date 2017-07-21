@@ -1,6 +1,6 @@
 package com.projects.jezinka.barnsleyfern
 
-class Mutant : Fern() {
+class Cyclosorus : Fern() {
 
     override var matrix: HashMap<String, HashMap<String, Float>> = hashMapOf(
             "f1" to hashMapOf("p" to 0.02f, "a" to 0f, "b" to 0f, "c" to 0f, "d" to 0.25f, "e" to 0f, "f" to -0.4f),
