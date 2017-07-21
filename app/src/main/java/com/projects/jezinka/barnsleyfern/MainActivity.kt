@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val seekBar = SeekBar(this)
         val myView = MyView(this)
 
         seekBar.progress = 50
@@ -42,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        chartLayout.addView(seekBar)
         chartLayout.addView(myView)
     }
 
@@ -79,7 +77,6 @@ class MainActivity : AppCompatActivity() {
                     function4(points, i)
                 }
             }
-
             canvas.drawPoints(points.map { it * 100 }.toFloatArray(), paint)
         }
     }
