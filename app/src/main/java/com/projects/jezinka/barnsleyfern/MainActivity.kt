@@ -82,6 +82,11 @@ class MainActivity : AppCompatActivity() {
                     fern = Fishbone()
                 }
             }
+            R.id.radio_modify -> {
+                if (checked) {
+                    fern = ModifiedBarnsley()
+                }
+            }
         }
         chartLayout.getChildAt(2).requestLayout()
     }

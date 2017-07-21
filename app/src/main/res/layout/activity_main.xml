@@ -39,6 +39,13 @@
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
             android:text="Fishbone" />
+
+        <RadioButton
+            android:id="@+id/radio_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Modified" />
     </RadioGroup>
 
 </LinearLayout>
