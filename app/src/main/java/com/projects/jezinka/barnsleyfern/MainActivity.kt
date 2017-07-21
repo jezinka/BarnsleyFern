@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     inner class MyView(context: Context) : View(context) {
 
         val paint = Paint()
-        val barnsleyFern = BarnsleyFern()
+        val barnsleyFern = BarnsleyFern()//Mutant()
 
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
