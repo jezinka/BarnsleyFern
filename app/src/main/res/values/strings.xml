@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BarnsleyFern</string>
+    <string name="standard">Standard</string>
+    <string name="cyclosorus">Cyclosorus</string>
+    <string name="fishbone">Fishbone</string>
+    <string name="modified">Modified</string>
 </resources>

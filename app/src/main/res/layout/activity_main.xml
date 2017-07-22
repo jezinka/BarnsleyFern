@@ -24,28 +24,28 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:onClick="onRadioButtonClicked"
-            android:text="Standard" />
+            android:text="@string/standard" />
 
         <RadioButton
             android:id="@+id/radio_cyclosorus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Cyclosorus" />
+            android:text="@string/cyclosorus" />
 
         <RadioButton
             android:id="@+id/radio_fishbone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Fishbone" />
+            android:text="@string/fishbone" />
 
         <RadioButton
             android:id="@+id/radio_modify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Modified" />
+            android:text="@string/modified" />
     </RadioGroup>
 
 </LinearLayout>
