@@ -69,6 +69,7 @@
         android:clickable="true"
         android:focusable="true"
         android:onClick="exitButtonClick"
+        app:backgroundTint="@android:color/holo_red_light"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
 </RelativeLayout>
