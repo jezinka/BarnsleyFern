@@ -42,14 +42,14 @@ abstract class Fern {
                 function = F4
             }
 
-            this.points[i] = first(function, i)
-            this.points[i + 1] = second(function, i)
+            this.points[i] = newX(function, i)
+            this.points[i + 1] = newY(function, i)
         }
 
         return this.points.map { it * 100 }.toFloatArray()
     }
 
-    fun first(function: String, i: Int): Float {
+    fun newX(function: String, i: Int): Float {
         val a = matrix[function]!![A]!!
         val b = matrix[function]!![B]!!
         val e = matrix[function]!![E]!!
@@ -57,7 +57,7 @@ abstract class Fern {
         return (a * getX(i) + b * getY(i) + e)
     }
 
-    fun second(function: String, i: Int): Float {
+    fun newY(function: String, i: Int): Float {
         val c = matrix[function]!![C]!!
         val d = matrix[function]!![D]!!
         val f = matrix[function]!![F]!!
