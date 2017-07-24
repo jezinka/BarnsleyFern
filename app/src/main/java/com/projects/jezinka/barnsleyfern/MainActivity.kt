@@ -3,7 +3,6 @@ package com.projects.jezinka.barnsleyfern
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.RadioButton
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -30,39 +29,28 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
             }
         })
+
+        radioGroup.setOnCheckedChangeListener { radioGroup, id ->
+            when (id) {
+                R.id.radio_standard -> {
+                    fernView.fern = BarnsleyFern()
+                }
+                R.id.radio_cyclosorus -> {
+                    fernView.fern = Cyclosorus()
+                }
+                R.id.radio_fishbone -> {
+                    fernView.fern = Fishbone()
+                }
+                R.id.radio_modify -> {
+                    fernView.fern = ModifiedBarnsley()
+                }
+            }
+            fernView.requestLayout()
+        }
     }
 
     fun exitButtonClick(view: View) {
         finish()
         System.exit(0)
-    }
-
-    fun onRadioButtonClicked(view: View) {
-
-        val checked = (view as RadioButton).isChecked
-
-        when (view.getId()) {
-            R.id.radio_standard -> {
-                if (checked) {
-                    fernView.fern = BarnsleyFern()
-                }
-            }
-            R.id.radio_cyclosorus -> {
-                if (checked) {
-                    fernView.fern = Cyclosorus()
-                }
-            }
-            R.id.radio_fishbone -> {
-                if (checked) {
-                    fernView.fern = Fishbone()
-                }
-            }
-            R.id.radio_modify -> {
-                if (checked) {
-                    fernView.fern = ModifiedBarnsley()
-                }
-            }
-        }
-        fernView.requestLayout()
     }
 }
